@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 
-const Input = ({ addTodo, setStatus, status,setFiltering ,filtering }) => {
+const Input = ({ addTodo, setStatus, status, setFiltering, filtering }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  
 
   const handleSubmit = () => {
     if (title !== "") {
-      addTodo(title, description,status);
+      addTodo(title, description, status);
       setTitle("");
       setDescription("");
-      setStatus('notCompleted')
+      setStatus("notCompleted");
     } else {
       alert("enter the input");
     }
@@ -18,7 +17,7 @@ const Input = ({ addTodo, setStatus, status,setFiltering ,filtering }) => {
   return (
     <div className="container">
       <div className="row text-md-center my-4">
-        <div className="col">
+        <div className="col-sm-11 col-md mt-2">
           <input
             className="border-success"
             value={title}
@@ -27,7 +26,7 @@ const Input = ({ addTodo, setStatus, status,setFiltering ,filtering }) => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="col">
+        <div className="col-sm-11 col-md mt-2">
           <input
             className="border-success"
             value={description}
@@ -36,7 +35,7 @@ const Input = ({ addTodo, setStatus, status,setFiltering ,filtering }) => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <div className="col">
+        <div className="col mt-2 text-center">
           <button onClick={handleSubmit} className="btn btn-success ">
             Add Todo
           </button>
@@ -46,10 +45,14 @@ const Input = ({ addTodo, setStatus, status,setFiltering ,filtering }) => {
         <h4 className="my-4">My Todos</h4>
         <h4 className="my-4">
           Status Filter:
-          <select className="w-25" value={filtering} onChange={(e)=>setFiltering(e.target.value)}>
-            <option value='all'>All</option>
-            <option value='completedList'>Completed</option>
-            <option value='notCompletedList'>Not Completed</option>
+          <select
+            className="w-25"
+            value={filtering}
+            onChange={(e) => setFiltering(e.target.value)}
+          >
+            <option value="all">All</option>
+            <option value="completedList">Completed</option>
+            <option value="notCompletedList">Not Completed</option>
           </select>
         </h4>
       </div>

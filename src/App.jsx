@@ -34,7 +34,8 @@ const addTodo=(newTitle,newDescription,status)=>{
 const filteredTodo=filteringTodo();
   return (
     <div>
-      <h1 className='text-success text-md-center my-3'>My Todo</h1>
+      <h1 className='text-success text-center my-3'>Do Day Light
+</h1>
       <Input addTodo={addTodo} setStatus={setStatus} status={status} setFiltering={setFiltering} filtering={filtering}/>
       <Card todo={filteredTodo} setTodo={setTodo} />
     </div>
